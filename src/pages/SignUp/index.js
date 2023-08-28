@@ -1,11 +1,48 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { Platform } from "react-native";
 
-export default function SignUp(){
+import {
+    Background,
+    Container,
+    AreaInput,
+    Input,
+    SubmitButtom,
+    SubmitText
+} from '../SignIn/styles';
 
-    return(
-        <View>
-            <Text>Tela Cadastro</Text>
-        </View>
+export default function SignUp() {
+
+    return (
+        <Background>
+            <Container
+                behavior={Platform.OS === 'ios' ? 'padding' : ''} // No Android o teclado sobe o conteúdo automaticamente na tela, 
+                //mas o IOS não. Por isso é preciso utilizar esse Platform
+                enabled
+            >
+
+                <AreaInput>
+                    <Input
+                        placeholder="Nome"
+                    />
+                </AreaInput>
+
+                <AreaInput>
+                    <Input
+                        placeholder="Seu email"
+                    />
+                </AreaInput>
+
+                <AreaInput>
+                    <Input
+                        placeholder="Sua senha"
+                    />
+                </AreaInput>
+
+                <SubmitButtom>
+                    <SubmitText>Cadastrar</SubmitText>
+                </SubmitButtom>
+
+            </Container>
+        </Background>
     )
 }
