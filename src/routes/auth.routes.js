@@ -28,7 +28,7 @@ function AuthRoutes(){
                         borderBottomColor: '#00b94a'
                     },
                     headerTintColor: '#FFF',
-                    headerTitle: 'VOltar',
+                    headerTitle: 'Voltar',
                     headerBackTitleVisible: false, // Tira o título 'extra' no header do IOS
                 }}
             />
