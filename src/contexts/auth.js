@@ -96,9 +96,16 @@ function AuthProvider({children}){
         }
     }
 
+    async function signOut(){
+        await AsyncStorage.clear()
+        .then(() => {
+            setUser(null);
+        })
+    }
+
     return(
         // signed vai ser true ou false. "!!" converte o valor de "user" para booleano. Ex: se "user" for null irá converter para falso.
-        <AuthContext.Provider value={{signed: !!user, user, signUp, signIn, loadingAuth, loading}}>
+        <AuthContext.Provider value={{signed: !!user, user, signUp, signIn, signOut, loadingAuth, loading}}>
             {children}
         </AuthContext.Provider>
     )
