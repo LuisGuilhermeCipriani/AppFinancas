@@ -32,7 +32,8 @@ function AuthProvider({children}){
     }
 
     return(
-        <AuthContext.Provider value={{user, signUp, loadingAuth}}>
+        // signed vai ser true ou false. "!!" converte o valor de "user" para booleano. Ex: se "user" for null irá converter para falso.
+        <AuthContext.Provider value={{signed: !!user, user, signUp, loadingAuth}}>
             {children}
         </AuthContext.Provider>
     )
